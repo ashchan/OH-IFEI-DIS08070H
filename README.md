@@ -1,5 +1,14 @@
 # Standalone F/A18C IFEI Display controller for DCS-WORLD
 
+## Modifications by this fork
+
+* Use the [CrowPanel 7" HMI ESP32 Display](https://www.elecrow.com/esp32-display-7-inch-hmi-display-rgb-tft-lcd-touch-screen-support-lvgl.html) (SKU DIS08070H-1).
+* Updated `include/display_driver.h` to support DIS08070H.
+* Use git submodule to reference to [DCS-Skunkworks/dcs-bios-arduino-library](https://github.com/DCS-Skunkworks/dcs-bios-arduino-library) `0.3.11`.
+* Trim left nozzle BMP images to reduce their sizes to fit in the 4MB flash size.
+
+---
+
 This project is all about a DCS-WORLD compatible, stand-alone F/A18C IFEI display emulation. 
 It's based on a ZX7d00XE01S 7" display, powered by an ESP32s3.
 

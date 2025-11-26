@@ -11,8 +11,8 @@ DCSBIOS_WIFI_FORK = https://github.com/SCUBA82/dcs-bios-arduino-library
 Using Wifi for data communication
 */
 
-//#define DCSBIOS_DEFAULT   
-#define DCSBIOS_WIFI_FORK   
+#define DCSBIOS_DEFAULT
+//#define DCSBIOS_WIFI_FORK
 
 // Wifi credentials if Wifi is enabled
 #ifdef DCSBIOS_WIFI_FORK

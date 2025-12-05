@@ -252,7 +252,7 @@ void onLightsTestSwChange(unsigned int newValue) {
       test_switch_enabled = false;
     }
 }
-DcsBios::IntegerBuffer lightsTestSwBuffer(0x74c8, 0x0800, 11, onLightsTestSwChange);
+DcsBios::IntegerBuffer lightsTestSwBuffer(FA_18C_hornet_LIGHTS_TEST_SW, onLightsTestSwChange);
 
 
 //################## RPM  ##################
@@ -261,14 +261,14 @@ void onIfeiRpmLChange(char* newValue) {
   update_element(RPML);
  
 }
-DcsBios::StringBuffer<3> ifeiRpmLBuffer(0x749e, onIfeiRpmLChange);
+DcsBios::StringBuffer<3> ifeiRpmLBuffer(FA_18C_hornet_IFEI_RPM_L_A, onIfeiRpmLChange);
 
 void onIfeiRpmRChange(char* newValue) {
   display_elements[RPMR].value = remove_trailing_spaces(newValue);
   update_element(RPMR);
 
 }
-DcsBios::StringBuffer<3> ifeiRpmRBuffer(0x74a2, onIfeiRpmRChange);
+DcsBios::StringBuffer<3> ifeiRpmRBuffer(FA_18C_hornet_IFEI_RPM_R_A, onIfeiRpmRChange);
 
 void onIfeiRpmTextureChange(char* newValue) {
   if (strcmp(newValue, "1") == 0) {
@@ -280,7 +280,7 @@ void onIfeiRpmTextureChange(char* newValue) {
     update_element(RPMT);
   }
 }
-DcsBios::StringBuffer<1> ifeiRpmTextureBuffer(0x74bc, onIfeiRpmTextureChange);
+DcsBios::StringBuffer<1> ifeiRpmTextureBuffer(FA_18C_hornet_IFEI_RPM_TEXTURE_A, onIfeiRpmTextureChange);
 
 // ################## TEMP  ##################
 //Left
@@ -296,7 +296,7 @@ void onIfeiTempLChange(char* newValue) {
   //}
    
 }
-DcsBios::StringBuffer<3> ifeiTempLBuffer(0x74a6, onIfeiTempLChange);
+DcsBios::StringBuffer<3> ifeiTempLBuffer(FA_18C_hornet_IFEI_TEMP_L_A, onIfeiTempLChange);
 //Right
 void onIfeiTempRChange(char* newValue) {
    if (strcmp(newValue, "100") == 0 ){
@@ -307,7 +307,7 @@ void onIfeiTempRChange(char* newValue) {
     update_element(TMPR);
  // }
 }
-DcsBios::StringBuffer<3> ifeiTempRBuffer(0x74aa, onIfeiTempRChange);
+DcsBios::StringBuffer<3> ifeiTempRBuffer(FA_18C_hornet_IFEI_TEMP_R_A, onIfeiTempRChange);
 
 //Texture
 void onIfeiTempTextureChange(char* newValue) {
@@ -320,7 +320,7 @@ void onIfeiTempTextureChange(char* newValue) {
     update_element(TMPT);
   }
 }
-DcsBios::StringBuffer<1> ifeiTempTextureBuffer(0x74be, onIfeiTempTextureChange);
+DcsBios::StringBuffer<1> ifeiTempTextureBuffer(FA_18C_hornet_IFEI_TEMP_TEXTURE_A, onIfeiTempTextureChange);
 
 // ################## SP CODES  ##################
 //SP 
@@ -330,7 +330,7 @@ void onIfeiSpChange(char* newValue) {
     update_element(TMPL);
   }
 }
-DcsBios::StringBuffer<3> ifeiSpBuffer(0x74b2, onIfeiSpChange);
+DcsBios::StringBuffer<3> ifeiSpBuffer(FA_18C_hornet_IFEI_SP_A, onIfeiSpChange);
 
 //Codes
 void onIfeiCodesChange(char* newValue) {
@@ -339,7 +339,7 @@ void onIfeiCodesChange(char* newValue) {
     update_element(TMPR);
   }
 }
-DcsBios::StringBuffer<3> ifeiCodesBuffer(0x74ae, onIfeiCodesChange);
+DcsBios::StringBuffer<3> ifeiCodesBuffer(FA_18C_hornet_IFEI_CODES_A, onIfeiCodesChange);
 
 //################## FUEL FLOW  ##################
 //LEFT
@@ -351,7 +351,7 @@ void onIfeiFfLChange(char* newValue) {
    }
     update_element(FFL);
 }
-DcsBios::StringBuffer<3> ifeiFfLBuffer(0x7482, onIfeiFfLChange);
+DcsBios::StringBuffer<3> ifeiFfLBuffer(FA_18C_hornet_IFEI_FF_L_A, onIfeiFfLChange);
 
 //Right
 void onIfeiFfRChange(char* newValue) {
@@ -362,7 +362,7 @@ void onIfeiFfRChange(char* newValue) {
    }
     update_element(FFR);
 }
-DcsBios::StringBuffer<3> ifeiFfRBuffer(0x7486, onIfeiFfRChange);
+DcsBios::StringBuffer<3> ifeiFfRBuffer(FA_18C_hornet_IFEI_FF_R_A, onIfeiFfRChange);
 //Texture
 void onIfeiFfTextureChange(char* newValue) {
   if (strcmp(newValue, "1") == 0) {
@@ -378,7 +378,7 @@ void onIfeiFfTextureChange(char* newValue) {
     update_element(FFTL);
   }
 }
-DcsBios::StringBuffer<1> ifeiFfTextureBuffer(0x74c0, onIfeiFfTextureChange);
+DcsBios::StringBuffer<1> ifeiFfTextureBuffer(FA_18C_hornet_IFEI_FF_TEXTURE_A, onIfeiFfTextureChange);
 
 //################## OIL  ##################
 //Left
@@ -386,13 +386,13 @@ void onIfeiOilPressLChange(char* newValue) {
   display_elements[OILL].value = remove_trailing_spaces(newValue);
   update_element(OILL);
 }
-DcsBios::StringBuffer<3> ifeiOilPressLBuffer(0x7496, onIfeiOilPressLChange);
+DcsBios::StringBuffer<3> ifeiOilPressLBuffer(FA_18C_hornet_IFEI_OIL_PRESS_L_A, onIfeiOilPressLChange);
 //Right
 void onIfeiOilPressRChange(char* newValue) {
   display_elements[OILR].value = remove_trailing_spaces(newValue);
   update_element(OILR);
 }
-DcsBios::StringBuffer<3> ifeiOilPressRBuffer(0x749a, onIfeiOilPressRChange);
+DcsBios::StringBuffer<3> ifeiOilPressRBuffer(FA_18C_hornet_IFEI_OIL_PRESS_R_A, onIfeiOilPressRChange);
 //Texture
 void onIfeiOilTextureChange(char* newValue) {
   
@@ -408,7 +408,7 @@ void onIfeiOilTextureChange(char* newValue) {
   update_element(OILT);
   update_element(NOZT);
 }
-DcsBios::StringBuffer<1> ifeiOilTextureBuffer(0x74c4, onIfeiOilTextureChange);
+DcsBios::StringBuffer<1> ifeiOilTextureBuffer(FA_18C_hornet_IFEI_OIL_TEXTURE_A, onIfeiOilTextureChange);
 
 //################## NOZZEL Gauges  ##################
 //Left
@@ -446,7 +446,7 @@ void onExtNozzlePosLChange(unsigned int newValue) {
          display_elements[NOZL].sprite->pushSprite(display_elements[NOZL].pos_x,display_elements[NOZL].pos_y,0x000000U);
     } 
 }
-DcsBios::IntegerBuffer extNozzlePosLBuffer(0x757a, 0xffff, 0, onExtNozzlePosLChange);
+DcsBios::IntegerBuffer extNozzlePosLBuffer(FA_18C_hornet_EXT_NOZZLE_POS_L_A, 0xffff, 0, onExtNozzlePosLChange);
 
 //Pointer visibility
 void onIfeiLpointerTextureChange(char* newValue) {
@@ -458,7 +458,7 @@ void onIfeiLpointerTextureChange(char* newValue) {
     NOZL_pointer_visible = true;
   }
 }
-DcsBios::StringBuffer<1> ifeiLpointerTextureBuffer(0x74d8, onIfeiLpointerTextureChange);
+DcsBios::StringBuffer<1> ifeiLpointerTextureBuffer(FA_18C_hornet_IFEI_LPOINTER_TEXTURE_A, onIfeiLpointerTextureChange);
 //Scale visibility
 void onIfeiLscaleTextureChange(char* newValue) {
     if (strcmp(newValue, "0") == 0) {
@@ -473,7 +473,7 @@ void onIfeiLscaleTextureChange(char* newValue) {
       NOZL_scale_visible = true;
     }    
 }
-DcsBios::StringBuffer<1> ifeiLscaleTextureBuffer(0x74c8, onIfeiLscaleTextureChange);
+DcsBios::StringBuffer<1> ifeiLscaleTextureBuffer(FA_18C_hornet_IFEI_LSCALE_TEXTURE_A, onIfeiLscaleTextureChange);
 //Scale numbers visibility
 void onIfeiL100TextureChange(char* newValue) {
     if (strcmp(newValue, "0") == 0) {
@@ -488,7 +488,7 @@ void onIfeiL100TextureChange(char* newValue) {
       NOZL_numbers_visible = true;
     }
 }
-DcsBios::StringBuffer<1> ifeiL100TextureBuffer(0x74d4, onIfeiL100TextureChange);
+DcsBios::StringBuffer<1> ifeiL100TextureBuffer(FA_18C_hornet_IFEI_L100_TEXTURE_A, onIfeiL100TextureChange);
 
 //Right
 //Pointer position
@@ -524,7 +524,7 @@ void onExtNozzlePosRChange(unsigned int newValue) {
       display_elements[NOZR].sprite->pushSprite(display_elements[NOZR].pos_x,display_elements[NOZR].pos_y,0x000000U);
     }
 }
-DcsBios::IntegerBuffer extNozzlePosRBuffer(0x7578, 0xffff, 0, onExtNozzlePosRChange);
+DcsBios::IntegerBuffer extNozzlePosRBuffer(FA_18C_hornet_EXT_NOZZLE_POS_R_A, 0xffff, 0, onExtNozzlePosRChange);
 
 //Pointer visibility
 void onIfeiRpointerTextureChange(char* newValue) {
@@ -536,7 +536,7 @@ void onIfeiRpointerTextureChange(char* newValue) {
     NOZR_pointer_visible = true;
   }
 }
-DcsBios::StringBuffer<1> ifeiRpointerTextureBuffer(0x74da, onIfeiRpointerTextureChange);
+DcsBios::StringBuffer<1> ifeiRpointerTextureBuffer(FA_18C_hornet_IFEI_RPOINTER_TEXTURE_A, onIfeiRpointerTextureChange);
 
 //Scale visibility
 void onIfeiRscaleTextureChange(char* newValue) {
@@ -552,7 +552,7 @@ void onIfeiRscaleTextureChange(char* newValue) {
       NOZR_scale_visible = true;
     }
 }
-DcsBios::StringBuffer<1> ifeiRscaleTextureBuffer(0x74ca, onIfeiRscaleTextureChange);
+DcsBios::StringBuffer<1> ifeiRscaleTextureBuffer(FA_18C_hornet_IFEI_RSCALE_TEXTURE_A, onIfeiRscaleTextureChange);
 
 //Scale numbers visibility
 void onIfeiR100TextureChange(char* newValue) {
@@ -568,7 +568,7 @@ void onIfeiR100TextureChange(char* newValue) {
       NOZR_numbers_visible = true;
     }
 }
-DcsBios::StringBuffer<1> ifeiR100TextureBuffer(0x74d6, onIfeiR100TextureChange);
+DcsBios::StringBuffer<1> ifeiR100TextureBuffer(FA_18C_hornet_IFEI_R100_TEXTURE_A, onIfeiR100TextureChange);
 
 //################## Light Modes  ##################
 
@@ -601,7 +601,7 @@ void onCockkpitLightModeSwChange(unsigned int newValue) {
     update_Clock(CLOCKL);
 }
  
-DcsBios::IntegerBuffer cockkpitLightModeSwBuffer(0x74c8, 0x0600, 9, onCockkpitLightModeSwChange);
+DcsBios::IntegerBuffer cockkpitLightModeSwBuffer(FA_18C_hornet_COCKKPIT_LIGHT_MODE_SW, onCockkpitLightModeSwChange);
 
 //################## FUEL  ##################
 //Upper
@@ -609,7 +609,7 @@ void onIfeiFuelUpChange(char* newValue) {
   display_elements[FUELU].value = remove_trailing_spaces(newValue);
   update_element(FUELU);
 }
-DcsBios::StringBuffer<6> ifeiFuelUpBuffer(0x7490, onIfeiFuelUpChange);
+DcsBios::StringBuffer<6> ifeiFuelUpBuffer(FA_18C_hornet_IFEI_FUEL_UP_A, onIfeiFuelUpChange);
 
 //Time mode
 void onIfeiTChange(char* newValue) {
@@ -624,7 +624,7 @@ void onIfeiTChange(char* newValue) {
     update_element(FUELU);
   }
 }
-DcsBios::StringBuffer<6> ifeiTBuffer(0x757c, onIfeiTChange);
+DcsBios::StringBuffer<6> ifeiTBuffer(FA_18C_hornet_IFEI_T_A, onIfeiTChange);
 
 //Tag L
 void onIfeiLTextureChange(char* newValue) {
@@ -635,20 +635,20 @@ void onIfeiLTextureChange(char* newValue) {
   }
   update_element(L);
 }
-DcsBios::StringBuffer<1> ifeiLTextureBuffer(0x7582, onIfeiLTextureChange);
+DcsBios::StringBuffer<1> ifeiLTextureBuffer(FA_18C_hornet_IFEI_L_TEXTURE_A, onIfeiLTextureChange);
 
 //Lower
 void onIfeiFuelDownChange(char* newValue) {
   display_elements[FUELL].value = remove_trailing_spaces(newValue);
   update_element(FUELL);
 }
-DcsBios::StringBuffer<6> ifeiFuelDownBuffer(0x748a, onIfeiFuelDownChange);
+DcsBios::StringBuffer<6> ifeiFuelDownBuffer(FA_18C_hornet_IFEI_FUEL_DOWN_A, onIfeiFuelDownChange);
 //Time mode
 void onIfeiTimeSetModeChange(char* newValue) {
   display_elements[FUELL].value = remove_trailing_spaces(newValue);
   update_element(FUELL);
 }
-DcsBios::StringBuffer<6> ifeiTimeSetModeBuffer(0x74b6, onIfeiTimeSetModeChange);
+DcsBios::StringBuffer<6> ifeiTimeSetModeBuffer(FA_18C_hornet_IFEI_TIME_SET_MODE_A, onIfeiTimeSetModeChange);
 
 //Tag R
 void onIfeiRTextureChange(char* newValue) {
@@ -659,7 +659,7 @@ void onIfeiRTextureChange(char* newValue) {
   }
   update_element(R);
 }
-DcsBios::StringBuffer<1> ifeiRTextureBuffer(0x7584, onIfeiRTextureChange);
+DcsBios::StringBuffer<1> ifeiRTextureBuffer(FA_18C_hornet_IFEI_R_TEXTURE_A, onIfeiRTextureChange);
 
 
 //################## BINGO ################## 
@@ -672,7 +672,7 @@ void onIfeiBingoTextureChange(char* newValue) {
   }
   update_element(BINGOT);
 }
-DcsBios::StringBuffer<1> ifeiBingoTextureBuffer(0x74c6, onIfeiBingoTextureChange);
+DcsBios::StringBuffer<1> ifeiBingoTextureBuffer(FA_18C_hornet_IFEI_BINGO_TEXTURE_A, onIfeiBingoTextureChange);
 
 //Digits
 void onIfeiBingoChange(char* newValue) {
@@ -681,7 +681,7 @@ void onIfeiBingoChange(char* newValue) {
     update_element(BINGO);
 
 }
-DcsBios::StringBuffer<5> ifeiBingoBuffer(0x7468, onIfeiBingoChange);
+DcsBios::StringBuffer<5> ifeiBingoBuffer(FA_18C_hornet_IFEI_BINGO_A, onIfeiBingoChange);
 
 
 //################## CLOCK ##################
@@ -691,33 +691,33 @@ void onIfeiClockHChange(char* newValue) {
   TC_H = String(newValue);
   update_Clock(CLOCKU);
 }
-DcsBios::StringBuffer<2> ifeiClockHBuffer(0x746e, onIfeiClockHChange);
+DcsBios::StringBuffer<2> ifeiClockHBuffer(FA_18C_hornet_IFEI_CLOCK_H_A, onIfeiClockHChange);
 //colon 1 
 void onIfeiDd1Change(char* newValue) {
     TC_Dd1 = newValue;
     update_Clock(CLOCKU);
 }
-DcsBios::StringBuffer<1> ifeiDd1Buffer(0x747a, onIfeiDd1Change);
+DcsBios::StringBuffer<1> ifeiDd1Buffer(FA_18C_hornet_IFEI_DD_1_A, onIfeiDd1Change);
 //Minutes
 void onIfeiClockMChange(char* newValue) {
   
   TC_M = newValue;
   update_Clock(CLOCKU);
 }
-DcsBios::StringBuffer<2> ifeiClockMBuffer(0x7470, onIfeiClockMChange);
+DcsBios::StringBuffer<2> ifeiClockMBuffer(FA_18C_hornet_IFEI_CLOCK_M_A, onIfeiClockMChange);
 //colon 2 
 void onIfeiDd2Change(char* newValue) {
     TC_Dd2 = *newValue;
     update_Clock(CLOCKU);
 }
-DcsBios::StringBuffer<1> ifeiDd2Buffer(0x747c, onIfeiDd2Change);
+DcsBios::StringBuffer<1> ifeiDd2Buffer(FA_18C_hornet_IFEI_DD_2_A, onIfeiDd2Change);
 //Seconds
 void onIfeiClockSChange(char* newValue) {
   
   TC_S = newValue;
   update_Clock(CLOCKU);
 }
-DcsBios::StringBuffer<2> ifeiClockSBuffer(0x7472, onIfeiClockSChange);
+DcsBios::StringBuffer<2> ifeiClockSBuffer(FA_18C_hornet_IFEI_CLOCK_S_A, onIfeiClockSChange);
 
 //Tag Z
 void onIfeiZTextureChange(char* newValue) {
@@ -730,7 +730,7 @@ void onIfeiZTextureChange(char* newValue) {
     update_element(ZULU);
   }
 }
-DcsBios::StringBuffer<1> ifeiZTextureBuffer(0x74dc, onIfeiZTextureChange);
+DcsBios::StringBuffer<1> ifeiZTextureBuffer(FA_18C_hornet_IFEI_Z_TEXTURE_A, onIfeiZTextureChange);
 
 //Lower
 //Hours
@@ -738,32 +738,32 @@ void onIfeiTimerHChange(char* newValue) {
   LC_H = String(newValue);
   update_Clock(CLOCKL);
 }
-DcsBios::StringBuffer<2> ifeiTimerHBuffer(0x7474, onIfeiTimerHChange);
+DcsBios::StringBuffer<2> ifeiTimerHBuffer(FA_18C_hornet_IFEI_TIMER_H_A, onIfeiTimerHChange);
 
 //Colon 1
 void onIfeiDd3Change(char* newValue) {
   LC_Dd1 = String(newValue);
   update_Clock(CLOCKL);
 }
-DcsBios::StringBuffer<1> ifeiDd3Buffer(0x747e, onIfeiDd3Change);
+DcsBios::StringBuffer<1> ifeiDd3Buffer(FA_18C_hornet_IFEI_DD_3_A, onIfeiDd3Change);
 //Minutes
 void onIfeiTimerMChange(char* newValue) {
   LC_M = String(newValue);
   update_Clock(CLOCKL);
 }
-DcsBios::StringBuffer<2> ifeiTimerMBuffer(0x7476, onIfeiTimerMChange);
+DcsBios::StringBuffer<2> ifeiTimerMBuffer(FA_18C_hornet_IFEI_TIMER_M_A, onIfeiTimerMChange);
 //Colon 2
 void onIfeiDd4Change(char* newValue) {
   LC_Dd2 = String(newValue);
   update_Clock(CLOCKL);
 }
-DcsBios::StringBuffer<1> ifeiDd4Buffer(0x7480, onIfeiDd4Change);
+DcsBios::StringBuffer<1> ifeiDd4Buffer(FA_18C_hornet_IFEI_DD_4_A, onIfeiDd4Change);
 //Seconds
 void onIfeiTimerSChange(char* newValue) {
   LC_S = String(newValue);
   update_Clock(CLOCKL);
 }
-DcsBios::StringBuffer<2> ifeiTimerSBuffer(0x7478, onIfeiTimerSChange);
+DcsBios::StringBuffer<2> ifeiTimerSBuffer(FA_18C_hornet_IFEI_TIMER_S_A, onIfeiTimerSChange);
 
 
 //################## Display Brightness ##################
@@ -772,7 +772,7 @@ DcsBios::StringBuffer<2> ifeiTimerSBuffer(0x7478, onIfeiTimerSChange);
 void onIfeiDispIntLtChange(unsigned int newValue) {
     tft.setBrightness(map(newValue, 0, 65535, 0, 255));
 }
-DcsBios::IntegerBuffer ifeiDispIntLtBuffer(0x7564, 0xffff, 0, onIfeiDispIntLtChange);
+DcsBios::IntegerBuffer ifeiDispIntLtBuffer(FA_18C_hornet_IFEI_DISP_INT_LT_A, 0xffff, 0, onIfeiDispIntLtChange);
 
 //################## Display Brightness ##################
 
@@ -888,7 +888,6 @@ void setup(void) {
 #endif
 		
   tft.begin();
-  Serial.begin(115200);
   
 if(!LITTLEFS.begin(true)){
     Serial.println("An Error has occurred while mounting LITTLEFS");

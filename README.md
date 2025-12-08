@@ -6,6 +6,7 @@
 * Updated `include/display_driver.h` to support DIS08070H.
 * Use git submodule to reference to [DCS-Skunkworks/dcs-bios-arduino-library](https://github.com/DCS-Skunkworks/dcs-bios-arduino-library) `0.3.11`.
 * Trim left nozzle BMP images to reduce their sizes to fit in the 4MB flash size.
+* Alias Serial to Serial0(UART0) to handle DCS-BIOS messages.
 
 ---
 

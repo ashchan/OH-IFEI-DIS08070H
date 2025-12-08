@@ -12,7 +12,8 @@
 #endif
 
 #ifdef DCSBIOS_DEFAULT
-    #define DCSBIOS_DEFAULT_SERIAL
+  #define Serial Serial0
+  #define DCSBIOS_DEFAULT_SERIAL
 #endif 
 
 // InputPins
